@@ -1,0 +1,96 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{20CE7B18-84D2-47C8-A115-3D514AA094F5}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="BackupCow.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="..\TestBroadcast\TestBroadcast.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="..\Hao_Tools\HaoTools.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="..\Code_Tools\CodeTools.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="FolderTransfer.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="..\TestProject\Project1\Project8.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="BackupCow">
+			<MSBuild Projects="BackupCow.dproj"/>
+		</Target>
+		<Target Name="BackupCow:Clean">
+			<MSBuild Projects="BackupCow.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="BackupCow:Make">
+			<MSBuild Projects="BackupCow.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="TestBroadcast">
+			<MSBuild Projects="..\TestBroadcast\TestBroadcast.dproj"/>
+		</Target>
+		<Target Name="TestBroadcast:Clean">
+			<MSBuild Projects="..\TestBroadcast\TestBroadcast.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="TestBroadcast:Make">
+			<MSBuild Projects="..\TestBroadcast\TestBroadcast.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="HaoTools">
+			<MSBuild Projects="..\Hao_Tools\HaoTools.dproj"/>
+		</Target>
+		<Target Name="HaoTools:Clean">
+			<MSBuild Projects="..\Hao_Tools\HaoTools.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="HaoTools:Make">
+			<MSBuild Projects="..\Hao_Tools\HaoTools.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="CodeTools">
+			<MSBuild Projects="..\Code_Tools\CodeTools.dproj"/>
+		</Target>
+		<Target Name="CodeTools:Clean">
+			<MSBuild Projects="..\Code_Tools\CodeTools.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="CodeTools:Make">
+			<MSBuild Projects="..\Code_Tools\CodeTools.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="FolderTransfer">
+			<MSBuild Projects="FolderTransfer.dproj"/>
+		</Target>
+		<Target Name="FolderTransfer:Clean">
+			<MSBuild Projects="FolderTransfer.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="FolderTransfer:Make">
+			<MSBuild Projects="FolderTransfer.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="Project8">
+			<MSBuild Projects="..\TestProject\Project1\Project8.dproj"/>
+		</Target>
+		<Target Name="Project8:Clean">
+			<MSBuild Projects="..\TestProject\Project1\Project8.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="Project8:Make">
+			<MSBuild Projects="..\TestProject\Project1\Project8.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="BackupCow;TestBroadcast;HaoTools;CodeTools;FolderTransfer;Project8"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="BackupCow:Clean;TestBroadcast:Clean;HaoTools:Clean;CodeTools:Clean;FolderTransfer:Clean;Project8:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="BackupCow:Make;TestBroadcast:Make;HaoTools:Make;CodeTools:Make;FolderTransfer:Make;Project8:Make"/>
+		</Target>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')" Project="$(BDS)\Bin\CodeGear.Group.Targets"/>
+	</Project>

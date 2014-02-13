@@ -1,0 +1,325 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{35DC0F4D-4ECC-48DD-9151-BABE5DC78386}</ProjectGuid>
+			<ProjectVersion>13.4</ProjectVersion>
+			<MainSource>BackupCow.dpr</MainSource>
+			<Base>True</Base>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<AppType>Application</AppType>
+			<FrameworkType>VCL</FrameworkType>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+			<Platform Condition="'$(Platform)'==''">Win32</Platform>
+			<TargetedPlatforms>1</TargetedPlatforms>
+			<Platform>Win32</Platform>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<VerInfo_AutoGenVersion>true</VerInfo_AutoGenVersion>
+			<VerInfo_Build>1436</VerInfo_Build>
+			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+			<DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;Xml.Win;Web.Win;System.Win;$(DCC_Namespace)</DCC_Namespace>
+			<VerInfo_MajorVer>2</VerInfo_MajorVer>
+			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=2.0.0.1436;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+			<VerInfo_Locale>2052</VerInfo_Locale>
+			<DCC_UsePackage>vclimg;vcl;vclx;dbrtl;Rave90VCL;bdertl;VclSmp;rtl;svnui;svn;TeeUI;TeeDB;Tee;vclactnband;vcldb;vcldbx;vcltouch;xmlrtl;dsnap;dsnapcon;vclib;ibxpress;adortl;IndyCore;IndySystem;IndyProtocols;inet;intrawebdb_110_150;Intraweb_110_150;vclie;websnap;webdsnap;inetdb;inetdbbde;inetdbxpress;soaprtl;vclribbon;dbexpress;DbxCommonDriver;DataSnapIndy10ServerTransport;DataSnapProviderClient;DbxClientDriver;DataSnapClient;dbxcds;DataSnapServer;AzureCloud;DBXInterBaseDriver;DBXMySQLDriver;DBXFirebirdDriver;DBXSybaseASEDriver;DBXSybaseASADriver;DBXOracleDriver;DBXMSSQLDriver;DBXInformixDriver;DBXDb2Driver;CodeSiteExpressVcl;AutoUpgraderProBDS2006;VirtualTreesD14;RaizeComponentsVcl;RaizeComponentsVclDb;$(DCC_UsePackage)</DCC_UsePackage>
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_DcuOutput>.\$(Config)\$(Platform)</DCC_DcuOutput>
+			<DCC_ExeOutput>.\$(Config)\$(Platform)</DCC_ExeOutput>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<DCC_MaxStackSize>1572864</DCC_MaxStackSize>
+			<DCC_MapFile>3</DCC_MapFile>
+			<DCC_Define>DEBUG;_VER7;$(DCC_Define)</DCC_Define>
+			<DCC_Optimize>false</DCC_Optimize>
+			<DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="BackupCow.dpr">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="UiniBackup\UBackupInfoControl.pas"/>
+			<DCCReference Include="UiniBackup\UBackupInfoFace.pas"/>
+			<DCCReference Include="UiniBackup\UBackupInfoXml.pas"/>
+			<DCCReference Include="UiniBackup\UBackupFileScan.pas"/>
+			<DCCReference Include="UiniBackup\UFormBackupPath.pas">
+				<Form>frmSelectBackupPath</Form>
+			</DCCReference>
+			<DCCReference Include="UiniBackup\UMyBackupInfo.pas"/>
+			<DCCReference Include="UnitCloud\UMyCloudPathInfo.pas"/>
+			<DCCReference Include="UnitUtil\UFileBaseInfo.pas"/>
+			<DCCReference Include="UnitUtil\UFormUtil.pas"/>
+			<DCCReference Include="UnitUtil\UModelUtil.pas"/>
+			<DCCReference Include="UnitUtil\UMyUtil.pas"/>
+			<DCCReference Include="UnitUtil\UXmlUtil.pas"/>
+			<DCCReference Include="UnitMain\UBackupCow.pas"/>
+			<DCCReference Include="UnitNetwork\USearchServer.pas"/>
+			<DCCReference Include="UnitNetwork\UFormBroadcast.pas">
+				<Form>frmBroadcast</Form>
+			</DCCReference>
+			<DCCReference Include="UnitNetwork\UNetworkControl.pas"/>
+			<DCCReference Include="UnitNetwork\UMyNetPcInfo.pas"/>
+			<DCCReference Include="UnitUtil\uLkJSON.pas"/>
+			<DCCReference Include="UnitNetwork\UNetworkFace.pas"/>
+			<DCCReference Include="UnitNetwork\UMyTcp.pas"/>
+			<DCCReference Include="UnitNetwork\UMyServer.pas"/>
+			<DCCReference Include="UnitNetwork\UMyClient.pas"/>
+			<DCCReference Include="UnitNetwork\UMyMaster.pas"/>
+			<DCCReference Include="UnitJob\UBackupJobScan.pas"/>
+			<DCCReference Include="UnitJob\UJobFace.pas"/>
+			<DCCReference Include="UnitJob\UMyFileUpload.pas"/>
+			<DCCReference Include="UnitJob\UMyFileDownload.pas"/>
+			<DCCReference Include="UnitJob\UJobControl.pas"/>
+			<DCCReference Include="UnitJob\UMyFileTransfer.pas"/>
+			<DCCReference Include="UiniBackup\UBackupUtil.pas"/>
+			<DCCReference Include="UnitJob\UMyJobInfo.pas"/>
+			<DCCReference Include="UnitUtil\UChangeInfo.pas"/>
+			<DCCReference Include="UnitUtil\uDebug.pas"/>
+			<DCCReference Include="UnitCloud\UCloudPathInfoXml.pas"/>
+			<DCCReference Include="UnitSearch\UMyFileSearch.pas"/>
+			<DCCReference Include="UnitSearch\USearchFileFace.pas"/>
+			<DCCReference Include="UnitSearch\UFileSearchControl.pas"/>
+			<DCCReference Include="UiniBackup\UFormFileStatusDetail.pas">
+				<Form>frmFileStatusDetail</Form>
+			</DCCReference>
+			<DCCReference Include="UnitMain\UFormSetting.pas">
+				<Form>frmSetting</Form>
+			</DCCReference>
+			<DCCReference Include="UnitMain\USettingInfo.pas"/>
+			<DCCReference Include="UnitUtil\uEncrypt.pas"/>
+			<DCCReference Include="UnitMain\UMainFormFace.pas"/>
+			<DCCReference Include="UnitNetwork\UNetPcInfoXml.pas"/>
+			<DCCReference Include="UnitRestore\UFormRestorePath.pas">
+				<Form>frmRestore</Form>
+			</DCCReference>
+			<DCCReference Include="UnitRestore\URestoreFileFace.pas"/>
+			<DCCReference Include="UnitUtil\CnMD5.pas"/>
+			<DCCReference Include="UnitUtil\UIconUtil.pas"/>
+			<DCCReference Include="UnitUtil\UMyUrl.pas"/>
+			<DCCReference Include="UnitMain\UFormAbout.pas">
+				<Form>frmAbout</Form>
+			</DCCReference>
+			<DCCReference Include="UnitMain\UFormRegisterNew.pas">
+				<Form>frmRegisterNew</Form>
+			</DCCReference>
+			<DCCReference Include="UnitMain\URegisterInfo.pas"/>
+			<DCCReference Include="UnitUtil\CRC.pas"/>
+			<DCCReference Include="UnitUtil\FGInt.pas"/>
+			<DCCReference Include="UnitUtil\FGIntRSA.pas"/>
+			<DCCReference Include="UnitUtil\kg_dnc.pas"/>
+			<DCCReference Include="UnitMain\URegisterInfoIO.pas"/>
+			<DCCReference Include="UnitBackupRemove\UMyBackupRemoveInfo.pas"/>
+			<DCCReference Include="UiniBackup\UBackupFileLostConn.pas"/>
+			<DCCReference Include="UnitRestore\UFormRestoreDetail.pas">
+				<Form>frmRestoreDetail</Form>
+			</DCCReference>
+			<DCCReference Include="UnitCloud\UMyCloudFileControl.pas"/>
+			<DCCReference Include="UnitSearch\UFormSearchOwnerDecrypt.pas">
+				<Form>frmIvDecrypt</Form>
+			</DCCReference>
+			<DCCReference Include="UnitSearch\UFormSearchFileDecrypt.pas">
+				<Form>frmSearchFileDecrypt</Form>
+			</DCCReference>
+			<DCCReference Include="UnitSearch\UMySearchDownInfo.pas"/>
+			<DCCReference Include="UnitSearch\UMySearchDownXml.pas"/>
+			<DCCReference Include="UnitRestore\UMyRestoreFileInfo.pas"/>
+			<DCCReference Include="UnitRestore\UMyRestoreFileXml.pas"/>
+			<DCCReference Include="UiniBackup\UBackupBoardInfo.pas"/>
+			<DCCReference Include="UnitMain\UAppEditionInfo.pas"/>
+			<DCCReference Include="UnitUtil\Defence.pas"/>
+			<DCCReference Include="UnitUtil\uDebugLock.pas"/>
+			<DCCReference Include="UnitNetwork\UFormNetworkPcDetail.pas">
+				<Form>frmNetworkPcDetail</Form>
+			</DCCReference>
+			<DCCReference Include="UiniBackup\UFormBackupProperties.pas">
+				<Form>frmBackupProperties</Form>
+			</DCCReference>
+			<DCCReference Include="UnitTransfer\UFormSelectTransfer.pas">
+				<Form>frmSelectTransfer</Form>
+			</DCCReference>
+			<DCCReference Include="UnitTransfer\UFileTransferFace.pas"/>
+			<DCCReference Include="UnitTransfer\UMyFileTransferControl.pas"/>
+			<DCCReference Include="UnitTransfer\UMyFileTransferInfo.pas"/>
+			<DCCReference Include="UnitTransfer\UTransferJobScan.pas"/>
+			<DCCReference Include="UnitTransfer\UMyFileTransferXml.pas"/>
+			<DCCReference Include="UnitShare\UFormFileShareExplorer.pas">
+				<Form>frmShareExplorer</Form>
+			</DCCReference>
+			<DCCReference Include="UnitLocalBackup\UFormLocalBackupPath.pas">
+				<Form>frmSelectLocalBackupPath</Form>
+			</DCCReference>
+			<DCCReference Include="UnitMain\UFormFreeEdition.pas">
+				<Form>frmFreeEdition</Form>
+			</DCCReference>
+			<DCCReference Include="UnitNetwork\UFromEnterGroup.pas">
+				<Form>frmJoinGroup</Form>
+			</DCCReference>
+			<DCCReference Include="UnitNetwork\UFormConnPc.pas">
+				<Form>frmConnComputer</Form>
+			</DCCReference>
+			<DCCReference Include="UnitMain\UMainForm.pas">
+				<Form>frmMainForm</Form>
+			</DCCReference>
+			<DCCReference Include="UnitMain\UFormExitWarnning.pas">
+				<Form>frmExitConfirm</Form>
+			</DCCReference>
+			<DCCReference Include="UnitNetwork\UPortMap.pas"/>
+			<DCCReference Include="UnitMain\UDebugForm.pas">
+				<Form>Form12</Form>
+			</DCCReference>
+			<DCCReference Include="UnitShare\UMyShareScan.pas"/>
+			<DCCReference Include="UnitShare\UMyShareControl.pas"/>
+			<DCCReference Include="UnitShare\UMyShareInfo.pas"/>
+			<DCCReference Include="UnitShare\UMyShareXml.pas"/>
+			<DCCReference Include="UnitShare\UMyShareFace.pas"/>
+			<DCCReference Include="UnitShare\UFormSelectSharePath.pas">
+				<Form>frmSelectSharePath</Form>
+			</DCCReference>
+			<DCCReference Include="UnitShare\UFmShareFileExplorer.pas">
+				<Form>FrameShareFiles</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="UnitLocalBackup\ULocalBackupInfo.pas"/>
+			<DCCReference Include="UnitLocalBackup\ULocalBackupXml.pas"/>
+			<DCCReference Include="UnitLocalBackup\ULocalBackupFace.pas"/>
+			<DCCReference Include="UnitLocalBackup\ULocalBackupControl.pas"/>
+			<DCCReference Include="UnitBackup_New\UBackupThread.pas"/>
+			<DCCReference Include="UnitBackupRemove\UMyBackupRemoveXml.pas"/>
+			<DCCReference Include="UnitBackupRemove\UMyBackupRemoveControl.pas"/>
+			<DCCReference Include="UiniBackup\UBackupFileConfirm.pas"/>
+			<DCCReference Include="UnitCloud\UCloudFileScan.pas"/>
+			<DCCReference Include="UnitUtil\UFormFileSelect.pas">
+				<Form>frmFileSelect</Form>
+			</DCCReference>
+			<DCCReference Include="UnitUtil\UFormSelectMask.pas">
+				<Form>FrmEnterMask</Form>
+			</DCCReference>
+			<DCCReference Include="UnitUtil\UFormSpaceLimit.pas">
+				<Form>frmSpaceLimit</Form>
+			</DCCReference>
+			<DCCReference Include="UnitUtil\UFmFilter.pas">
+				<Form>FrameFilter</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="UiniBackup\UFormBackupItemApply.pas">
+				<Form>frmBackupItemsApply</Form>
+			</DCCReference>
+			<DCCReference Include="UiniBackup\UBackupAutoSyncInfo.pas"/>
+			<DCCReference Include="UnitUtil\UFrameFilter.pas">
+				<Form>FrameFilterPage</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="UnitLocalBackup\UFormLocalBackupPro.pas">
+				<Form>FrmLocalBackupPro</Form>
+			</DCCReference>
+			<DCCReference Include="UnitLocalBackup\UFormSelectLocalSource.pas">
+				<Form>frmSelectLocalBackupSource</Form>
+			</DCCReference>
+			<DCCReference Include="UnitLocalBackup\UFormSelectLocalDes.pas">
+				<Form>frmSelectLocalDes</Form>
+			</DCCReference>
+			<DCCReference Include="UnitRestore\UMyRestoreFileControl.pas"/>
+			<DCCReference Include="UnitTransfer\UFormSelectReceiveFile.pas">
+				<Form>frmSelectReceive</Form>
+			</DCCReference>
+			<DCCReference Include="UnitLocalBackup\ULocalBackupAutoSync.pas"/>
+			<DCCReference Include="UnitUtil\UDataSetInfo.pas"/>
+			<DCCReference Include="UnitBackup_New\UMyBackupDataInfo.pas"/>
+			<DCCReference Include="UnitBackup_New\UMyBackupFaceInfo.pas"/>
+			<DCCReference Include="UnitBackup_New\UMyBackupXmlInfo.pas"/>
+			<DCCReference Include="UnitBackup_New\UMyBackupApiInfo.pas"/>
+			<DCCReference Include="UnitNetwork\UNetworkEventInfo.pas"/>
+			<DCCReference Include="UnitBackup_New\UFrmSelectBackupItem.pas">
+				<Form>frmSelectBackupItem</Form>
+			</DCCReference>
+			<DCCReference Include="UnitLocalBackup\ULocalBackupScan.pas"/>
+			<DCCReference Include="UnitCloud_New\UMyCloudDataInfo.pas"/>
+			<DCCReference Include="UnitCloud_New\UMyCloudXmlInfo.pas"/>
+			<DCCReference Include="UnitCloud_New\UMyCloudApiInfo.pas"/>
+			<DCCReference Include="UnitCloud_New\UCloudBackupThread.pas"/>
+			<DCCReference Include="UnitBackup_New\UMyBackupEventInfo.pas"/>
+			<DCCReference Include="UnitRestore_New\UMyRestoreFaceInfo.pas"/>
+			<DCCReference Include="UnitRestore_New\UMyRestoreApiInfo.pas"/>
+			<DCCReference Include="UnitCloud_New\UMyCloudEventInfo.pas"/>
+			<DCCReference Include="UnitRestore_New\UMyRestoreDataInfo.pas"/>
+			<DCCReference Include="UnitRestore_New\UMyRestoreXmlInfo.pas"/>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\8.0\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\8.0\UserTools.proj"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Delphi.Personality>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">True</VersionInfo>
+						<VersionInfo Name="MajorVer">2</VersionInfo>
+						<VersionInfo Name="MinorVer">2</VersionInfo>
+						<VersionInfo Name="Release">12</VersionInfo>
+						<VersionInfo Name="Build">1483</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">2052</VersionInfo>
+						<VersionInfo Name="CodePage">936</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName">创宜软件</VersionInfoKeys>
+						<VersionInfoKeys Name="FileDescription">自动备份软件和内部云存储</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">2.2.12.1483</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright">创宜软件 2010 - 2012 版权所有</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName">创宜Backup Cow内部云备份软件 V2.2</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">2.2.12.1479</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dcloffice2k160.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclofficexp160.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+					</Excluded_Packages>
+					<Source>
+						<Source Name="MainSource">BackupCow.dpr</Source>
+					</Source>
+				</Delphi.Personality>
+				<Platforms>
+					<Platform value="Win64">False</Platform>
+					<Platform value="Win32">True</Platform>
+				</Platforms>
+				<ModelSupport>False</ModelSupport>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>
